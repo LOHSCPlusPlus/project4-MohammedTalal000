@@ -9,8 +9,13 @@ using namespace std;
 Create the DB and load the default .txt file using the private readFile function.
 */
 CropDB::CropDB(){
+    crops = new CropInfo[MAX_CROPS];
     numCrops = 0;
     readFile("cropTiny.txt");
+}
+
+CropDB::~CropDB(){
+  delete[] crops;
 }
 
 /**
